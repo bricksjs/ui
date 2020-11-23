@@ -8,6 +8,7 @@
     "release": "npm run build && npm publish",
     "docs:deploy": "gh-pages -d docs-dist",
     "deploy": "npm run docs:build && npm run docs:deploy",
+    "surge": "npm run docs:build && surge docs-dist --domain bricksjs-react-ui.surge.sh",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
