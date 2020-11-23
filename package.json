@@ -1,5 +1,5 @@
 {
-  "name": "@brickjs/ui",
+  "name": "@brickjs/react-ui",
   "version": "0.0.1",
   "scripts": {
     "start": "dumi dev",
