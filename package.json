@@ -1,17 +1,19 @@
 {
-  "name": "@brickjs/ui",
-  "version": "0.0.1",
+  "name": "@bricksjs/react-ui",
+  "version": "0.0.3",
   "scripts": {
     "start": "dumi dev",
     "build": "father-build",
     "docs:build": "dumi build",
-    "release": "npm run build && npm publish",
+    "release": "npm run build && npm publish --access public",
     "docs:deploy": "gh-pages -d docs-dist",
     "deploy": "npm run docs:build && npm run docs:deploy",
+    "surge": "npm run docs:build && surge docs-dist --domain bricksjs-react-ui.surge.sh",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
   },
+  "keywords": ["react", "component"],
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "typings": "dist/index.d.ts",

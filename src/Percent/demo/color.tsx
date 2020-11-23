@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Percent } from '@brickjs/ui';
+import { Percent } from '@bricksjs/react-ui';
 
 export default () => {
   return (

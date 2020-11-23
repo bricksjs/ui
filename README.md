@@ -1,4 +1,4 @@
-# @brickjs/ui
+# @bricksjs/react-ui
 
 ## 开始
 
@@ -15,5 +15,9 @@ $ npm run build
 ## 使用
 
 ```ts
-import { Percent } from '@brickjs/ui';
+import { Percent } from '@bricksjs/react-ui';
 ```
+
+## 链接
+
+[文档](https://bricksjs-react-ui.surge.sh/)
