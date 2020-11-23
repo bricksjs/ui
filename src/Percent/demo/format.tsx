@@ -1,5 +1,5 @@
 import React from 'react';
-import { Percent } from '../../index';
+import { Percent } from '@bricksjs/react-ui';
 
 export default () => {
   return (
