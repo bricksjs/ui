@@ -1,18 +1,22 @@
 # Percent
 
-## 基础使用
+## Basic
 
 <code src="./demo/base.tsx" />
 
-## 自定义颜色
+## Color
 
 <code src="./demo/color.tsx" />
 
-## 自定义符号
+## Symbol
 
 <code src="./demo/symbol.tsx" />
 
-## 自定义展示
+## Shaped
+
+<code src="./demo/shaped.tsx" />
+
+## Format
 
 <code src="./demo/format.tsx" />
 
