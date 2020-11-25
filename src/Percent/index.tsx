@@ -8,10 +8,11 @@ import {
   getSymbolByRealValue,
   getRealTextWithPrecision,
 } from './util';
+import { PercentProps } from './interface';
 
 import './index.less';
 
-const Percent: React.SFC<PercentProps.Iprops> = props => {
+const Percent: React.SFC<PercentProps> = props => {
   const {
     abs,
     value,
@@ -39,6 +40,7 @@ const Percent: React.SFC<PercentProps.Iprops> = props => {
     if (symbol.calc && !prefix && !shaped) {
       return getSymbolByRealValue(realValue);
     }
+
     return null;
   }, [symbol, shaped, prefix, realValue]);
 

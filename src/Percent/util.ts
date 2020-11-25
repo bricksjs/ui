@@ -1,19 +1,27 @@
 import { toNumber } from 'lodash';
-import { isObject, isInvalidNumber, objectToArray, isNumber } from '../_utils';
+import { isObject, isInvalidNumber, objectToArray } from '../_utils';
+import {
+  Color,
+  SymbolKey,
+  SymbolValue,
+  ColorObjectType,
+  SymbolInt,
+  PercentValue,
+} from './interface';
 
-export const defaultColor = ['#FF4D4F', '#595959', '#52C41A'];
+const defaultColor = ['#FF4D4F', '#595959', '#52C41A'];
+const noColors = ['#595959', '#595959', '#595959'];
 
-export const defaultSymbol: Record<
-  PercentProps.SymbolKey,
-  PercentProps.SymbolValue
-> = {
+export const defaultSymbol: Record<SymbolKey, SymbolValue> = {
   calc: false,
   cent: false,
 };
 
-const adaptColor = (color: PercentProps.Color) => {
+const adaptColor = (color: Color) => {
   switch (true) {
-    case typeof color === 'boolean' || color === undefined:
+    case typeof color === 'boolean':
+      return color ? defaultColor : noColors;
+    case color === undefined:
       return defaultColor;
     case typeof color === 'string':
       return [color, color, color] as string[];
@@ -21,7 +29,7 @@ const adaptColor = (color: PercentProps.Color) => {
       return color as string[];
     case isObject(color):
       return objectToArray(
-        fillMissingColor(color as PercentProps.ColorObjectType) as {
+        fillMissingColor(color as ColorObjectType) as {
           [key: string]: any;
         },
         true,
@@ -31,9 +39,7 @@ const adaptColor = (color: PercentProps.Color) => {
   }
 };
 
-export function adaptSymbol(
-  symbol: boolean | PercentProps.SymbolInt | undefined = true,
-) {
+export function adaptSymbol(symbol: boolean | SymbolInt | undefined = true) {
   if (typeof symbol === 'boolean') {
     return {
       calc: symbol,
@@ -48,7 +54,7 @@ export function adaptSymbol(
   return defaultSymbol;
 }
 
-export function getCentSignBySymbol(cent: PercentProps.SymbolValue) {
+export function getCentSignBySymbol(cent: SymbolValue) {
   if (typeof cent === 'string') {
     return cent;
   }
@@ -56,7 +62,7 @@ export function getCentSignBySymbol(cent: PercentProps.SymbolValue) {
   return cent ? '%' : '';
 }
 
-export function fillMissingColor(color: PercentProps.ColorObjectType) {
+export function fillMissingColor(color: ColorObjectType) {
   const [upColor, zeroColor, downColor] = defaultColor;
   const { up, zero, down } = color;
   return Object.assign(
@@ -67,7 +73,7 @@ export function fillMissingColor(color: PercentProps.ColorObjectType) {
 
 export function getColorByRealValue(
   realValue: number,
-  color: PercentProps.Color = defaultColor,
+  color: Color = defaultColor,
 ) {
   const [a, b, c] = adaptColor(color);
   if (realValue === 0 || isInvalidNumber(realValue)) {

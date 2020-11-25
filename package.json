@@ -1,6 +1,6 @@
 {
   "name": "@bricksjs/react-ui",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
     "start": "dumi dev",
     "build": "father-build",
@@ -27,6 +27,9 @@
     "*.ts?(x)": [
       "prettier --parser=typescript --write"
     ]
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
     "react": "^16.12.0",
