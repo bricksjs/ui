@@ -13,7 +13,10 @@
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
   },
-  "keywords": ["react", "component"],
+  "keywords": [
+    "react",
+    "component"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "typings": "dist/index.d.ts",
@@ -32,12 +35,14 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "react": "^16.12.0",
     "classnames": "^2.2.6",
-    "lodash": "^4.17.20"
+    "lodash": "^4.17.20",
+    "react": "^16.12.0"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.11",
     "@umijs/test": "^3.0.5",
+    "antd": "^4.9.0",
     "dumi": "^1.0.10",
     "father-build": "^1.17.2",
     "gh-pages": "^3.0.0",
