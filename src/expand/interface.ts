@@ -1,9 +1,9 @@
 /** 展开配置 */
 export type ExpandableType = {
   /** 展开时节点 */
-  openedText?: React.ReactNode;
+  openText?: React.ReactNode;
   /** 收起时节点 */
-  closeedText?: React.ReactNode;
+  closeText?: React.ReactNode;
 };
 
 export interface ExpandIProps {

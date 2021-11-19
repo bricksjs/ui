@@ -26,6 +26,6 @@ type ExpandableType = {
   /** 展开时节点 */
   openedText?: React.ReactNode;
   /** 收起时节点 */
-  closeedText?: React.ReactNode;
+  closeText?: React.ReactNode;
 };
 ```

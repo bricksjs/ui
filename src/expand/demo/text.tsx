@@ -18,7 +18,7 @@ export default () => {
       <h4>手动配置</h4>
       <Expand
         data={data}
-        expandable={{ openedText: '还要吗 ?', closeedText: '不要了' }}
+        expandable={{ openText: '还要吗 ?', closeText: '不要了' }}
       />
     </React.Fragment>
   );
